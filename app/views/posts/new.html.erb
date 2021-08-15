@@ -15,11 +15,15 @@
     </li>
   </ul>
 </header>
-<div class="main posts-index">
+<div class="main posts-new">
   <div class="container">
-    <% @posts.each do |post| %>
-      <div class="posts-index-item">
-        <%= link_to(post.content, "/posts/#{post.id}") %>
+    <h1 class="form-heading">投稿する</h1>
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <textarea name = "content"></textarea>
+          <input type="submit" value="投稿">
+        </div>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,15 @@
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/Users/apple/.rbenv/versions/2.6.8/bin/ruby -I /Users/apple/.rbenv/versions/2.6.8/lib/ruby/2.6.0 -r ./siteconf20210817-19856-15dt0zl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20210817-19856-1ssa769/skiptrace/internal

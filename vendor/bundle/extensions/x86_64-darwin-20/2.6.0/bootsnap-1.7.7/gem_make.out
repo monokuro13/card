@@ -1,0 +1,15 @@
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bootsnap-1.7.7/ext/bootsnap
+/Users/apple/.rbenv/versions/2.6.8/bin/ruby -I /Users/apple/.rbenv/versions/2.6.8/lib/ruby/2.6.0 -r ./siteconf20210817-12931-1j4e8ny.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210817-12931-mxq6w1/bootsnap

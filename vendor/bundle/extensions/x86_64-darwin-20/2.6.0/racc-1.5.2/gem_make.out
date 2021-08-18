@@ -1,0 +1,16 @@
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/racc-1.5.2/ext/racc/cparse
+/Users/apple/.rbenv/versions/2.6.8/bin/ruby -I /Users/apple/.rbenv/versions/2.6.8/lib/ruby/2.6.0 -r ./siteconf20210817-12931-w399xt.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/apple/Desktop/card/vendor/bundle/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20210817-12931-435yyb/racc

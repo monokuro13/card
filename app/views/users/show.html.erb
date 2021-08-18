@@ -1,0 +1,34 @@
+<header class="posts">
+  <div class="header-logo">
+    <%= link_to("トレカ交換", "/", {class: "top-link"}) %>
+  </div>
+  <ul class="header-menus">
+  <ul class="header-menus">
+    <li>
+      <%= link_to("トレカ交換とは", "/about", {class: "top-link"}) %>
+    </li>
+    <li>
+      <%= link_to("投稿一覧", "/posts/index", {class: "top-link"}) %>
+    </li>
+    <li>
+      <%= link_to("新規投稿", "/posts/new", {class: "top-link"}) %>
+    </li>
+    <li>
+      <%= link_to("ユーザー一覧", "/users/index", {class: "top-link"}) %>
+    </li>
+    <li>
+      <%= link_to("新規登録", "/signup", {class: "top-link"}) %>
+    </li>
+  </ul>
+</header>
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <!-- 以下で、ユーザー名を出力してください -->
+      <h2><%= @user.name %></h2>
+      <!-- 以下で、メールアドレスを出力してください -->
+      <p><%= @user.email %></p>
+      <%= link_to("編集", "/users/#{@user.id}/edit") %>
+    </div>
+  </div>
+</div>

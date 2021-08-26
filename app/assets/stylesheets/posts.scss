@@ -44,6 +44,17 @@
   text-align: left;
 }
 
+.image img{
+  width: 400;
+  height: auto;
+}
+
+#preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px silver;
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;

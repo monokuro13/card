@@ -47,6 +47,9 @@
       <p>
         <%= @post.content %>
       </p>
+      <div class="image">
+        <img src = "<%= "/post_images/#{@post.img}" %>" width="400" height="auto">
+      </div>
       <div class="post-time">
         <%= @post.created_at %>
       </div>

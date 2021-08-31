@@ -42,7 +42,7 @@
     <div class="user">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
+      
       <% if @user.id == @current_user.id %>
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
@@ -62,7 +62,22 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}", {class: "link"}) %>
           </div>
-          <%= link_to(post.content, "/posts/#{post.id}", {class: "link"}) %>
+          <p>
+            <%= link_to(post.group, "/posts/#{post.id}", {class: "link"}) %>
+          </p>
+          <p>
+            <%= link_to(post.request, "/posts/#{post.id}", {class: "link"}) %>
+          </p>
+          <p>
+            <%= link_to(post.give, "/posts/#{post.id}", {class: "link"}) %>
+          </p>
+          <p>
+            <%= link_to(post.content, "/posts/#{post.id}", {class: "link"}) %>
+          </p>
+          <div class="img">
+            <img  src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
+          </div>
+          <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
         </div>
       </div>
     <% end %>

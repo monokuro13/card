@@ -48,9 +48,23 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}", {class: "link"}) %>
           </div>
-          <%= link_to(post.content, "/posts/#{post.id}", {class: "link"})%>
+          <div class="group">
+            <%= link_to(post.group, "/posts/#{post.id}", {class: "link"})%>
+          </div>
+          <div class="request">
+            <%= link_to(post.request, "/posts/#{post.id}", {class: "link"})%>
+          </div>
+          <div class="give">
+            <%= link_to(post.give, "/posts/#{post.id}", {class: "link"})%>
+          </div>
+          <div class="content">
+            <%= link_to(post.content, "/posts/#{post.id}", {class: "link"})%>
+          </div>
           <div class="image">
             <img src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
+          </div>
+          <div class="movie">
+            <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
           </div>
         </div>
       </div>

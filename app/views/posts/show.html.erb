@@ -45,11 +45,21 @@
         <%= link_to(@user.name, "/users/#{@user.id}", {class: "link"}) %>
       </div>
       <p>
+        <%= @post.group %>
+      </p>
+      <p>
+        <%= @post.request %>
+      </p>
+      <p>
+        <%= @post.give %>
+      </p>
+      <p>
         <%= @post.content %>
       </p>
-      <div class="image">
-        <img src = "<%= "/post_images/#{@post.img}" %>" width="400" height="auto">
+      <div class="img">
+        <img  src = "<%= "/post_images/#{@post.img}" %>" width="400" height="auto">
       </div>
+      <video src = "<%= "/post_movies/#{@post.movie}" %>" width="400" type="video/*"  controls></video>
       <div class="post-time">
         <%= @post.created_at %>
       </div>

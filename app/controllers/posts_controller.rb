@@ -19,10 +19,22 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(
+      group: params[:group],
+      request: params[:request],
+      give: params[:give],
       content: params[:content],
       user_id: @current_user.id,
-      img: params[:image]
+      img: params[:image],
+      movie: params[:movie]
     )
+
+    
+    if params[:movie]
+      hex = SecureRandom.hex(10)
+      @post.movie = "#{hex}.mp4"
+      movie = params[:movie]
+      File.binwrite("public/post_movies/#{@post.movie}", movie.read)
+    end
 
     if params[:image]
       hex = SecureRandom.hex(10)
@@ -47,11 +59,23 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     
     @post.content = params[:content]
-    if params[:img]
+    @post.group = params[:group]
+    @post.request = params[:request]
+    @post.give = params[:give]
+
+    if params[:image]
       @post.img = "#{@post.id}.jpg"
-      img = params[:img]
-      File.binwrite("public/post_images/#{@post.img}", img.read)
+      image = params[:image]
+      File.binwrite("public/post_images/#{@post.img}", image.read)
     end
+
+    if params[:movie]
+      hex = SecureRandom.hex(10)
+      @post.movie = "#{hex}.mp4"
+      movie = params[:movie]
+      File.binwrite("public/post_movies/#{@post.movie}", movie.read)
+    end
+
 
     if @post.save
       flash[:notice] = "投稿を編集しました"

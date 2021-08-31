@@ -40,7 +40,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
-    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <%= form_tag("/posts/#{@post.id}/update", {multipart: true}) do %>
       <div class="form">
         <div class="form-body">
           <% @post.errors.full_messages.each do |message| %>
@@ -48,7 +48,38 @@
               <%= message %>
             </div>
           <% end %>
+          <input name="group" value="<%= @post.group %>">
+          <input name="request" value="<%= @post.request %>">
+          <input name="give" value="<%= @post.give %>">
           <textarea name = "content"><%= @post.content %></textarea>
+          <input name="image" type="file" id="example" accept="image/*" >
+          <input name="movie" type="file" accept="video/*">
+          <div id="preview"></div>
+          <script>
+            function previewFile(file) {
+              const preview = document.getElementById('preview');
+          
+              const reader = new FileReader();
+            
+              reader.onload = function (e) {
+                const imageUrl = e.target.result; 
+                const img = document.createElement("img"); 
+                img.src = imageUrl; 
+                preview.appendChild(img); 
+              }
+            
+              reader.readAsDataURL(file);
+            }
+            const fileInput = document.getElementById('example');
+            const handleFileSelect = () => {
+              const files = fileInput.files;
+              for (let i = 0; i < files.length; i++) {
+                previewFile(files[i]);
+              }
+            }
+            fileInput.addEventListener('change', handleFileSelect);
+          </script>
+          
           <input type="submit" value="保存">
         </div>
       </div>

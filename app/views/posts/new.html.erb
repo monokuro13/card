@@ -48,9 +48,14 @@
               <%= message %>
             </div>
           <% end %>
-          <textarea name = "content"><%= @post.content %></textarea>
+          
+          <input name="group" value="グループ（英語明記）">
+          <input name="request" value="求">
+          <input name="give" value="譲">
+          <textarea name = "content" value="メッセージ"><%= @post.content %></textarea>
 
-          <input name="image" type="file" id="example" accept="image/*" multiple>
+          <input name="image" type="file" id="example" accept="image/*">
+          <input name="movie" type="file" accept="video/*">
           <div id="preview"></div>
           <script>
             function previewFile(file) {

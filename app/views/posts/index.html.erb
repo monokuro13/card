@@ -37,8 +37,24 @@
     <% end %>
   </ul>
 </header>
+
 <div class="main posts-index">
   <div class="container">
+  <%= search_form_for @p, url: search_path do |f| %>
+    <div class = 'group'>
+      <%= f.text_field :group_cont, placeholder: "グループカードから探す", class: "input-box" %>
+      <%= submit_tag 'Search', :name => nil %>
+    </div>
+    <div class = 'request'>
+      <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "input-box" %>
+      <%= submit_tag 'Search', :name => nil %>
+    </div>
+    <div class = 'give'>
+      <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "input-box" %>
+      <%= submit_tag 'Search', :name => nil %>
+    </div>
+  <% end %>
+
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">

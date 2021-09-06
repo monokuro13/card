@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  root "users#index" 
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
+
   get "search" => "posts#search"
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"

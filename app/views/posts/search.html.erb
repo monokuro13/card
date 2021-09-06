@@ -29,6 +29,9 @@
       <%= link_to("トレカ交換とは", "/about", {class: "top-link"}) %>
       </li>
       <li>
+        <%= link_to("投稿一覧", "/posts/index", {class: "top-link"}) %>
+      </li>
+      <li>
       <%= link_to("新規登録", "/signup", {class: "top-link"}) %>
       </li>
       <li>
@@ -43,11 +46,9 @@
     <%= search_form_for @p, url: search_path do |f| %>
       <div class = 'group'>
         <%= f.text_field :group_cont, placeholder: "グループから探す", class: "input-box" %>
-        <%= submit_tag 'Search', :name => nil %>
       </div>
       <div class = 'request'>
         <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "input-box" %>
-        <%= submit_tag 'Search', :name => nil %>
       </div>
       <div class = 'give'>
         <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "input-box" %>
@@ -90,36 +91,6 @@
       <div>
         <p>一致するカードがありません。条件を変えて検索してみよう！</p>
       </div>
-      <% Post.all.each do |post| %>
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="<%= "/user_images/#{post.user.image_name}" %>">
-          </div>
-          <div class="post-right">
-            <div class="post-user-name">
-              <%= link_to(post.user.name, "/users/#{post.user.id}", {class: "link"}) %>
-            </div>
-            <div class="group">
-              <%= link_to(post.group, "/posts/#{post.id}", {class: "link"})%>
-            </div>
-            <div class="request">
-              <%= link_to(post.request, "/posts/#{post.id}", {class: "link"})%>
-            </div>
-            <div class="give">
-              <%= link_to(post.give, "/posts/#{post.id}", {class: "link"})%>
-            </div>
-            <div class="content">
-              <%= link_to(post.content, "/posts/#{post.id}", {class: "link"})%>
-            </div>
-            <div class="image">
-              <img src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
-            </div>
-            <div class="movie">
-              <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
-            </div>
-          </div>
-        </div>
-      <% end %>
     <% end %>
   </div>
 </div>

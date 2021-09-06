@@ -29,6 +29,9 @@
       <%= link_to("トレカ交換とは", "/about", {class: "top-link"}) %>
       </li>
       <li>
+        <%= link_to("投稿一覧", "/posts/index", {class: "top-link"}) %>
+      </li>
+      <li>
       <%= link_to("新規登録", "/signup", {class: "top-link"}) %>
       </li>
       <li>
@@ -43,11 +46,11 @@
   <%= search_form_for @p, url: search_path do |f| %>
     <div class = 'group'>
       <%= f.text_field :group_cont, placeholder: "グループカードから探す", class: "input-box" %>
-      <%= submit_tag 'Search', :name => nil %>
+      
     </div>
     <div class = 'request'>
       <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "input-box" %>
-      <%= submit_tag 'Search', :name => nil %>
+     
     </div>
     <div class = 'give'>
       <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "input-box" %>

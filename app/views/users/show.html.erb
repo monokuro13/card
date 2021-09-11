@@ -22,6 +22,9 @@
       <%= link_to("ユーザー一覧", "/users/index", {class: "top-link"}) %>
       </li>
       <li>
+        <%= link_to("メッセージ一覧", "/rooms/index", {class: "top-link"}) %>
+      </li>
+      <li>
       <%= link_to("ログアウト", "/logout", {method: "post"}) %>
       </li>
     <% else %>
@@ -48,6 +51,8 @@
       
       <% if @user.id == @current_user.id %>
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <%= link_to "退会",user_path(@current_user.id), class: "destroy-user", method: :delete, "data-confirm" => "本当に退会しますか？" %>
+     </div>
       <% else %>  
         <% if @isRoom == true %>
           <p><a href="/rooms/<%= @roomId %>">チャットへ</a>

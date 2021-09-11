@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  
-  root "users#index" 
+  resources :users, :only => [:destroy]
+  root "posts#index" 
   resources :messages, :only => [:create]
-  resources :rooms, :only => [:create, :show, :index]
+  resources :rooms, :only => [:create]
 
+  
   get "search" => "posts#search"
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   get "users/:id/likes" => "users#likes"
+
+  get "rooms/index" => "rooms#index"
+  get "rooms/:id" => "rooms#show"
+  post "rooms/create" => "rooms#create"
+
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show"

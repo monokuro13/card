@@ -1,10 +1,10 @@
 <header class="posts">
   <div class="header-logo">
-  <% if @current_user %>
-    <%= link_to("TweetApp", "/posts/index") %>
-  <% else %>
-    <%= link_to("TweetApp", "/") %>
-  <% end %>
+    <% if @current_user %>
+      <%= link_to("TweetApp", "/posts/index") %>
+    <% else %>
+      <%= link_to("TweetApp", "/") %>
+    <% end %>
   </div>
   <ul class="header-menus">
 
@@ -43,30 +43,29 @@
     <% end %>
   </ul>
 </header>
-<div class="main users-new">
-  <div class="container">
-    <div class="form-heading">新規ユーザー登録</div>
-    <div class="form users-form">
-      <div class="form-body">
-        <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
-        <% end %>
 
-        <%= form_tag("/users/create") do %>
-          <p>ユーザー名</p>
-          <input name="name" value="<%= @user.name %>">
-          
-          <p>メールアドレス</p>
-          <input name="email">
-
-          <p>パスワード</p>
-          <input type="password" name="password" value="<%= @user.password %>">
-          
-          <input type="submit" value="新規登録" value="<%= @user.email %>">
+<div class="message-index">
+  <% @anotherEntries.each do |e| %>
+    <div class="users-index-item">
+      <div class="user-left">
+        <%= link_to "/rooms/#{e.room.id}" do %>
+      
+          <img src="<%= "/user_images/#{e.user.image_name}" %>">
         <% end %>
       </div>
-    </div>
+      <div class="user-right">
+        <%= link_to "/rooms/#{e.room.id}" do %>
+          <%= e.user.name %>さんのチャットへ<br>
+          <% if e.room.message_ids.last %>
+            <%= Message.find_by(id: e.room.message_ids.last).content %>
+          <% else %>
+            <p>まだメッセージはありません</p>
+          <% end %>
+        <% end %>
+      </div>
+      
   </div>
+  <% end %>
 </div>
+  
+

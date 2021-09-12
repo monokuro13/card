@@ -47,17 +47,29 @@
   <h1>DM</h1>
 </div>
 
-<h4>参加者</h4>
-<% @entries.each do |e| %>
-  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
-<% end %>
+<div class="participant">
+  <h4>参加者</h4>
+  <% @entries.each do |e| %>
+    <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+  <% end %>
+</div>
 
 <hr>
 <% if @messages.present? %>
   <% @messages.each do |m| %>
-    <strong><%= m.content %></strong>
-    <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %>さん</a></strong></small>
-    <hr>
+    <% if m.user_id == @current_user.id %>
+      <div class="right-message">
+        <strong><%= m.content %></strong>
+        <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %>さん</a></strong></small>
+        <hr>
+      </div>
+    <% else %>
+      <div class="left-message">
+        <strong><%= m.content %></strong>
+        <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %>さん</a></strong></small>
+        <hr>
+      </div>
+    <% end %> 
   <% end %>
 <% else %>
   <h3 class="text-center">メッセージはまだありません</h3>

@@ -2,16 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.user-link {
+  display: flex;
+}
+
+.user-index-link {
+  padding-top: 20px;
+}
+
+.member-link {
+  padding-left: 20px;
+}
+
 .message-index{
   padding-top: 100px;
 }
 
 .right-message {
   text-align: right;
+  padding-bottom: 50px;
 }
+
+.balloon{
+  position: relative;
+  padding: 20px;
+  background-color: #ade0ff;
+  border-radius: 30px;
+}
+
 
 .left-message {
   text-align: left;
+  padding-bottom: 50px;
 }
 
 .DM {
@@ -19,5 +41,6 @@
 }
 
 .participant {
+  display: inline-block;
   text-align: center;
 }

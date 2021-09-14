@@ -4,6 +4,18 @@
 
 /* posts/index ================================ */
 
+.search-box  {
+  font-size: 13px;
+  padding: 5px 20px;
+  border-color: #8899a6;
+  border-radius: 30px;
+  height: 30px;
+}
+
+.search {
+  padding-bottom: 20px;
+}
+
 .posts-index-item {
   padding: 20px 30px;
   background-color: white;
@@ -137,5 +149,20 @@
 }
 
 .posts {
-  background-color: #3ecdc6;
+  // background: #70e1f5; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #70e1f5, #ffd194); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #70e1f5, #ffd194); 
+
+  // background: #C9FFBF;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: #B993D6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #CC95C0;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }

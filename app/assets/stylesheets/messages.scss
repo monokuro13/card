@@ -24,12 +24,20 @@
   padding-top: 25px;
 }
 
-.balloon{
+.balloon-right{
   position: relative;
   padding: 20px;
-  background-color: #ade0ff;
+  background-color: #B993D6;
   border-radius: 30px;
 }
+
+.balloon-left{
+  position: relative;
+  padding: 20px;
+  background-color: #8CA6DB;
+  border-radius: 30px;
+}
+
 
 
 .left-message {
@@ -40,4 +48,9 @@
 
 .submit {
   text-align: center;
+}
+
+.text_field {
+  border-radius: 10px;
+  border-color: #8CA6DB;
 }

@@ -17,12 +17,12 @@
       <% if m.user_id == @current_user.id %>
         <div class="right-message">
           <strong><a class="link" href="/users/<%= m.user_id %>"><%= m.user.name %></a></strong>
-          <strong class="balloon"><%= m.content %></strong>     
+          <strong class="balloon-right"><%= m.content %></strong>     
         </div>
       <% else %>
         <div class="left-message">
           <strong><a class="link" href="/users/<%= m.user_id %>"><%= m.user.name %></a></strong>
-          <strong class="balloon"><%= m.content %></strong> 
+          <strong class="balloon-left"><%= m.content %></strong> 
         </div>
       <% end %> 
     <% end %>
@@ -33,7 +33,7 @@
 
 <div class="submit">
   <%= form_for @message do |f| %>
-    <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+    <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, :class => "text_field" %>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <%= f.submit "投稿する" %>
   <% end %>

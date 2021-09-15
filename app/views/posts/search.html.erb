@@ -1,17 +1,19 @@
 <div class="main posts-index">
   <div class="container">
-    <%= search_form_for @p, url: search_path do |f| %>
-      <div class = 'group'>
-        <%= f.text_field :group_cont, placeholder: "グループから探す", class: "search-box" %>
-      </div>
-      <div class = 'request'>
-        <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "search-box" %>
-      </div>
-      <div class = 'give'>
-        <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "search-box" %>
-        <%= submit_tag 'Search', :name => nil %>
-      </div>
-    <% end %>
+    <div class="search">
+      <%= search_form_for @p, url: search_path do |f| %>
+        <div class = 'group'>
+          <%= f.text_field :group_cont, placeholder: "グループから探す", class: "search-box" %>
+        </div>
+        <div class = 'request'>
+          <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "search-box" %>
+        </div>
+        <div class = 'give'>
+          <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "search-box" %>
+          <%= submit_tag 'Search', :name => nil %>
+        </div>
+      <% end %>
+    </div>
 
     <% if @results.present? %>
       <% @results.each do |post| %>

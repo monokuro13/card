@@ -4,7 +4,7 @@ RSpec.describe "Users", type: :request do
   describe "GET /index" do
     it "responds successfully" do
       get '/users/index'
-      expect(response).to have_http_status(:success)
+      expect(response).to be_successful
     end
   end
 

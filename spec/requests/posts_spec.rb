@@ -13,5 +13,25 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
+
+
+  describe "GET /new" do 
+    before do 
+      @user = FactoryBot.create(:user)
+    end
+
+    it "レスポンスを返すか" do
+      get '/posts/new'
+      expect(response).to be_successful
+    end
+
+    it "200を返すか" do
+      get '/posts/new'
+      expect(response).to have_http_status "200"
+    end
+  end
+
+  end
+
   
 end

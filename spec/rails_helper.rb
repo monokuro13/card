@@ -63,5 +63,20 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   
   config.include FactoryBot::Syntax::Methods
-  config.include Devise::TestHelpers, type: :controller
+
+  config.before(:each) do
+
+    # let(:rspec_session) で指定された値を セッションの初期値とします
+    session = defined?(rspec_session) ? rspec_session : {}
+
+    # destroyメソッドを実行してもエラーにならないようにします（必要であれば）
+    session.class_eval { def destroy; nil; end } 
+
+    # 追記 実行後のセッションを取得できるようにする
+    config.add_setting(:session, :default => session)
+
+    def sign_in(user)
+      allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
+    end
+  end
 end

@@ -1,16 +1,11 @@
 FactoryBot.define do
-  factory :user do
+  factory :user do 
+    id {"1"}
     name {"name"}
     email {"test@gmail.com"}
     password {"password"}
+    image_name {"image_name"}
   end
 
-  factory :post do 
-    group {"group"}
-    request {"request"}
-    give {"give"}
-    content {"content"}
-    img {"img.jpg"}
-    movie {"movie.mp4"}
-  end
+  
 end

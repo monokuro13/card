@@ -15,23 +15,36 @@ RSpec.describe "Posts", type: :request do
 
 
 
-  describe "GET /new" do 
-    before do 
-      @user = FactoryBot.create(:user)
-    end
+  
+  describe 'GET /show' do
+    
+    let(:user) { FactoryBot.create(:user) }
+    context 'ユーザーがログインしている場合' do
+      before do
+        sign_in(user)
+        post= user.posts.create(
+          id: "1",
+          group: "group",
+          request: "request",
+          give: "give",
+          content: "content",
+          img: "img.jpg",
+          movie: "movie.mp4",
+          created_at: "created",
+          updated_at: "update"
+        )
+        get "/posts/1"
+      end
+      it 'responds successfully' do
+        expect(response).to be_successful
+      end
 
-    it "レスポンスを返すか" do
-      get '/posts/new'
-      expect(response).to be_successful
-    end
-
-    it "200を返すか" do
-      get '/posts/new'
-      expect(response).to have_http_status "200"
+      it 'returns a 200 response' do
+        expect(response).to have_http_status(200)
+      end
     end
   end
-
-  end
+  
 
   
 end

@@ -90,7 +90,23 @@ RSpec.describe "Users", type: :request do
       end
   end
 
+  describe 'GET /edit' do
+    
+    let(:user) { FactoryBot.create(:user) }
+    context 'ユーザーがログインしている場合' do
+      before do
+        sign_in(user)
+        get "/users/1/edit"
+      end
+      it 'responds successfully' do
+        expect(response).to be_successful
+      end
 
+      it 'returns a 200 response' do
+        expect(response).to have_http_status(200)
+      end
+    end
+end
   
 
 end

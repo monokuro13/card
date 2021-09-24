@@ -13,9 +13,10 @@
           <input name="group" placeholder="グループ（英語明記）">
           <input name="request" value="求:">
           <input name="give" value="譲:">
-          <textarea name = "content" placeholder="詳細" value="メッセージ"><%= @post.content %></textarea>
-
+          <textarea name = "content" placeholder="例）複数交換可能です。" value="メッセージ"><%= @post.content %></textarea>
+          <p>画像を選択</p>
           <input name="image" type="file" id="example" accept="image/*">
+          <p>動画を選択</p>
           <input name="movie" type="file" accept="video/*">
           <div id="preview"></div>
           <script>

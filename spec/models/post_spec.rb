@@ -135,4 +135,38 @@ RSpec.describe Post, type: :model do
     )
     expect(post).to be_invalid
   end
+
+  it "contentが140文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      request: "request",
+      give: "give",
+      content: "a"*140,
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "contentが139文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      request: "request",
+      give: "give",
+      content: "a"*139,
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  
 end

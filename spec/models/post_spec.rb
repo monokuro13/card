@@ -169,4 +169,101 @@ RSpec.describe Post, type: :model do
   end
 
   
+  it "グループ名がひらがなの場合投稿できない" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "ぐるーぷ",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_invalid
+  end
+
+  it "グループ名がカタカナの場合投稿できない" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "グループ",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_invalid
+  end
+
+  it "グループ名が英語の場合投稿できる" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "グループ名が全角数字の場合投稿できる" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "１２７",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "グループ名が半角数字の場合投稿できる" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "127",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "グループ名が英数字の場合投稿できる" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "NCT127",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img.jpg",
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
 end
+

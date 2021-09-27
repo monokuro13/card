@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_05_084925) do
+ActiveRecord::Schema.define(version: 2021_09_27_121055) do
 
   create_table "entries", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_09_05_084925) do
     t.string "request"
     t.string "give"
     t.string "movie"
+    t.string "album"
   end
 
   create_table "rooms", charset: "utf8mb3", force: :cascade do |t|

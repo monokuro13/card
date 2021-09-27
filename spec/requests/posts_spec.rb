@@ -25,6 +25,7 @@ RSpec.describe "Posts", type: :request do
         post= user.posts.create(
           id: "1",
           group: "group",
+          album: "album",
           request: "request",
           give: "give",
           content: "content",
@@ -52,6 +53,7 @@ RSpec.describe "Posts", type: :request do
           post= user.posts.create(
             id: "1",
             group: "group",
+            album: "album",
             request: "request",
             give: "give",
             content: "content",

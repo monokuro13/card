@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(
       group: params[:group],
+      album: params[:album],
       request: params[:request],
       give: params[:give],
       content: params[:content],
@@ -61,6 +62,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     
     @post.content = params[:content]
+    @post.album = params[:album]
     @post.group = params[:group]
     @post.request = params[:request]
     @post.give = params[:give]

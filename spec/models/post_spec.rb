@@ -300,5 +300,116 @@ RSpec.describe Post, type: :model do
     expect(post).to be_valid
   end
 
+  it "imgが51文字以上の場合は登録できない" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "a"*51,
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_invalid
+  end
+
+  it "imgが50文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "a"*50,
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "imgが50文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "a"*49,
+      movie: "movie.mp4",
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "movieが51文字以上の場合は登録できない" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img",
+      movie: "a"*51,
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_invalid
+  end
+
+  it "movieが50文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img",
+      movie: "a"*50,
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  it "movieが49文字以上の場合" do
+    post = Post.new(
+      id: "1",
+      user_id: "1",
+      group: "group",
+      album: "sticker",
+      request: "request",
+      give: "give",
+      content: "content",
+      img: "img",
+      movie: "a"*49,
+      created_at: "created",
+      updated_at: "update"
+    )
+    expect(post).to be_valid
+  end
+
+  # it "拡張子がmp4の時"do 
+  #   file_name = "test.mp4"
+  #   image = /\A(.+?)((?:\.[^.]+)?)\z/.match(file_name, &:captures)
+  #   post = FactoryBot.create(:post)
+  #   post.img = 'image'
+  # post.valid?
+  #   expect(post.errors[:img]).to include("画像を選択してください")
+  # end
+
 end
 

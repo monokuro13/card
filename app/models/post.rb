@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   validates :content, {presence: true, length: {maximum: 140}}
   validates :user_id, {presence: true}
-  validates :img, {presence: true}
-  validates :movie, {presence: true}
+  validates :img, {presence: true, length: {maximum: 50}}
+  validates :movie, {presence: true, length: {maximum: 50}}
   validates :album, {presence: true}
 
   with_options presence: true, format: {without: /\A[ぁ-んァ-ン一-龥]/ , message: 'は英数字で入力してください'} do

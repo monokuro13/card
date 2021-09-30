@@ -402,51 +402,6 @@ RSpec.describe Post, type: :model do
     expect(post).to be_valid
   end
 
-  describe "拡張子" do
-    before do 
-      @post = Post.new(
-        id: "1",
-        user_id: "1",
-        group: "group",
-        album: "sticker",
-        request: "request",
-        give: "give",
-        content: "content",
-        img: "img.jpg",
-        movie: "a"*49,
-        created_at: "created",
-        updated_at: "update"
-      )
-    end
-    it "拡張子がmp4の時"do 
-      @ext = File.extname(@post.img)
-      # expect(@post.img).to /\A(.+?)((?:\.[^.]+)?)\z/.match(@post.img, &:captures)
-      expect(@ext).to eq ".jpg"
-    end
-  end
-
-  describe "拡張子" do
-    before do 
-      @post = Post.new(
-        id: "1",
-        user_id: "1",
-        group: "group",
-        album: "sticker",
-        request: "request",
-        give: "give",
-        content: "content",
-        img: "img.mp4",
-        movie: "a"*49,
-        created_at: "created",
-        updated_at: "update"
-      )
-    end
-    it "拡張子がmp4の時"do 
-      @ext = File.extname(@post.img)
-      # expect(@post.img).to /\A(.+?)((?:\.[^.]+)?)\z/.match(@post.img, &:captures)
-      expect(@ext).to eq ".mp4"
-    end
-  end
-
+  
 end
 

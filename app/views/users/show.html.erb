@@ -26,37 +26,40 @@
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
-
-    <% @user.posts.each do |post| %>
-      <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div class="post-right">
-          <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}", {class: "link"}) %>
+    <div class="user-posts-index">
+      <% @user.posts.each do |post| %>
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
           </div>
-          <p>
-            <%= link_to(post.group, "/posts/#{post.id}", {class: "link"}) %>
-          </p>
-          <p>
-            <%= link_to(post.album, "/posts/#{post.id}", {class: "link"}) %>
-          </p>
-          <p>
-            <%= link_to(post.request, "/posts/#{post.id}", {class: "link"}) %>
-          </p>
-          <p>
-            <%= link_to(post.give, "/posts/#{post.id}", {class: "link"}) %>
-          </p>
-          <p>
-            <%= link_to(post.content, "/posts/#{post.id}", {class: "link"}) %>
-          </p>
-          <div class="img">
-            <img  src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
+          <div class="post-right">
+            <div class="post-user-name">
+              <%= link_to(post.user.name, "/users/#{post.user.id}", {class: "link"}) %>
+            </div>
+            <p class="group">
+              <%= link_to(post.group, "/posts/#{post.id}", {class: "link"}) %>
+            </p>
+            <p class="album">
+              <%= link_to(post.album, "/posts/#{post.id}", {class: "link"}) %>
+            </p>
+            <p>
+              <%= link_to(post.request, "/posts/#{post.id}", {class: "link"}) %>
+            </p>
+            <p>
+              <%= link_to(post.give, "/posts/#{post.id}", {class: "link"}) %>
+            </p>
+            <p>
+              <%= link_to(post.content, "/posts/#{post.id}", {class: "link"}) %>
+            </p>
+            <div class="img">
+              <img  src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
+            </div>
+            <div class="video">
+              <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
+            </div>
           </div>
-          <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

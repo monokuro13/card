@@ -1,26 +1,25 @@
 <div class="main posts-index">
-  <div class="container">
-    <div class="search">
-      <%= search_form_for @p, url: search_path do |f| %>
-        <div class = 'group'>
-          <%= f.text_field :group_cont, placeholder: "グループから探す", class: "search-box" %>
-          
-        </div>
-        <div class = 'album'>
-          <%= f.text_field :album_cont, placeholder: "アルバムから探す", class: "search-box" %>
-          
-        </div>
-        <div class = 'request'>
-          <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "search-box" %>
+  <div class="search">
+    <%= search_form_for @p, url: search_path do |f| %>
+      <div class = 'group'>
+        <%= f.text_field :group_cont, placeholder: "グループから探す", class: "search-box" %>
         
-        </div>
-        <div class = 'give'>
-          <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "search-box" %>
-          <%= submit_tag 'Search', :name => nil %>
-        </div>
-      <% end %>
-    </div>
-
+      </div>
+      <div class = 'album'>
+        <%= f.text_field :album_cont, placeholder: "アルバムから探す", class: "search-box" %>
+        
+      </div>
+      <div class = 'request'>
+        <%= f.text_field :request_cont, placeholder: "欲しいカードから探す", class: "search-box" %>
+      
+      </div>
+      <div class = 'give'>
+        <%= f.text_field :give_cont, placeholder: "あげるカードから探す", class: "search-box" %>
+        <%= submit_tag 'Search', :name => nil %>
+      </div>
+    <% end %>
+  </div>
+  <div class="user-posts-index">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
@@ -45,10 +44,10 @@
           <div class="content">
             <%= link_to(post.content, "/posts/#{post.id}", {class: "link"})%>
           </div>
-          <div class="image">
+          <div class="img">
             <img src = "<%= "/post_images/#{post.img}" %>" width="400" height="auto">
           </div>
-          <div class="movie">
+          <div class="video">
             <video src = "<%= "/post_movies/#{post.movie}" %>" width="400" type="video/*"  controls></video>
           </div>
         </div>

@@ -15,6 +15,7 @@
 .search {
   padding-bottom: 20px;
   padding-top: 20px;
+  padding-left: 43%;
 }
 
 .posts-index-item {
@@ -76,10 +77,6 @@
   margin-left: 20px;
 }
 
-.post-right p{
-  margin-bottom: 2px;
-}
-
 .image img {
   padding-bottom: 20px;
 }
@@ -100,6 +97,7 @@
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
+  
 }
 
 .posts-show-item img {
@@ -118,11 +116,11 @@
   // height: 400px;
   border-radius: initial;
   box-shadow: initial;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .video video {
-  width: 300px;
+  width: 400px;
   height: 300px;
 }
 
@@ -134,7 +132,7 @@
 
 .posts-show-item p {
   font-size: 24px;
-  margin: 20px 0;
+  margin-bottom: 2px;
 }
 
 .post-time {

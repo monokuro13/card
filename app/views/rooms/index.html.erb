@@ -1,24 +1,27 @@
-<div class="message-index">
-  <% @anotherEntries.each do |e| %>
-    <div class="users-index-item">
-      <div class="user-left">
-        <%= link_to "/rooms/#{e.room.id}" do %>
-      
-          <img src="<%= "/user_images/#{e.user.image_name}" %>">
-        <% end %>
-      </div>
-      <div class="user-right">
-        <%= link_to("/rooms/#{e.room.id}", {class: "link"}) do %>
-          <%= e.user.name %><br>
-          <% if e.room.message_ids.last %>
-            <%= Message.find_by(id: e.room.message_ids.last).content %>
-          <% else %>
-            <p>まだメッセージはありません</p>
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">メッセージ一覧</h1>
+    <% @anotherEntries.each do |e| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <%= link_to "/rooms/#{e.room.id}" do %>
+        
+            <img src="<%= "/user_images/#{e.user.image_name}" %>">
           <% end %>
-        <% end %>
+        </div>
+        <div class="user-right">
+          <%= link_to("/rooms/#{e.room.id}", {class: "link"}) do %>
+            <%= e.user.name %><br>
+            <% if e.room.message_ids.last %>
+              <%= Message.find_by(id: e.room.message_ids.last).content %>
+            <% else %>
+              <p>まだメッセージはありません</p>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
   
 

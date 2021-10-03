@@ -1,7 +1,7 @@
 <header class="posts">
   <div class="user-link">
     <div class="user-index-link">
-      <%= link_to("ユーザー一覧に戻る", users_index_path, {class: "link"}) %>
+      <%= link_to("メッセージ一覧に戻る", "/rooms/index", {class: "link"}) %>
     </div>
     <div class="member-link">
       <% @entries.each do |e| %>

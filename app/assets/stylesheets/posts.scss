@@ -110,10 +110,26 @@
 }
 
 .img img {
-  width: 300px;
-  height: auto;
-  // width: auto;
-  // height: 400px;
+  // width: 300px;
+  // height: auto;
+  width: 200px;
+  height: 200px;
+  /*画像表示の仕方*/
+  object-fit: cover;
+  /*画像表樹の基準*/
+  object-position: 0 0;
+  border-radius: initial;
+  box-shadow: initial;
+  padding-bottom: 10px;
+}
+
+.post-img {
+  width: 200px;
+  height: 200px;
+  /*画像表示の仕方*/
+  object-fit: cover;
+  /*画像表樹の基準*/
+  object-position: 0 0;
   border-radius: initial;
   box-shadow: initial;
   padding-bottom: 10px;

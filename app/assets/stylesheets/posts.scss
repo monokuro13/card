@@ -25,15 +25,23 @@
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+.posts-index-item p{
+  margin-bottom: 0;
+}
+
 .user-posts-index {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .user-posts-index>div {
-  width:50%;
+  width:33%;
 }
+
+
 
 .link {
   color: black;
@@ -61,10 +69,12 @@
   width: 10%;
 }
 
+
+
 .post-right {
   float: left;
   width: 90%;
-  padding-left: 25px;
+  padding-left: 50px;
   text-align: left;
 }
 
@@ -87,6 +97,11 @@
   border: solid 1px silver;
 }
 
+.content{
+  word-break:break-all;
+  word-wrap:break-word;
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;
@@ -97,10 +112,12 @@
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
-  
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
 }
 
-.posts-show-item img {
+.post-left img {
   width: 60px;
   height: 60px;
   border-radius: 40%;
@@ -109,19 +126,19 @@
   object-fit: cover;
 }
 
-.img img {
-  // width: 300px;
-  // height: auto;
-  width: 200px;
-  height: 200px;
-  /*画像表示の仕方*/
-  object-fit: cover;
-  /*画像表樹の基準*/
-  object-position: 0 0;
-  border-radius: initial;
-  box-shadow: initial;
-  padding-bottom: 10px;
-}
+// .img img {
+//   // width: 300px;
+//   // height: auto;
+//   width: 200px;
+//   height: 200px;
+//   /*画像表示の仕方*/
+//   object-fit: cover;
+//   /*画像表樹の基準*/
+//   object-position: 0 0;
+//   border-radius: initial;
+//   box-shadow: initial;
+//   padding-bottom: 10px;
+// }
 
 .post-img {
   width: 200px;
@@ -134,6 +151,18 @@
   box-shadow: initial;
   padding-bottom: 10px;
 }
+.post-show-img {
+  width: 400px;
+  height: 400px;
+  /*画像表示の仕方*/
+  object-fit: cover;
+  /*画像表樹の基準*/
+  object-position: 0 0;
+  border-radius: initial;
+  box-shadow: initial;
+  padding-bottom: 10px;
+}
+
 
 .video video {
   width: 400px;
@@ -148,7 +177,7 @@
 
 .posts-show-item p {
   font-size: 24px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 
 .post-time {

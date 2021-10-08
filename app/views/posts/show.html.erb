@@ -23,11 +23,11 @@
         <p class="content">
           <%= @post.content %>
         </p>
-        <div class="img">
-        <img  src = "<%= "/post_images/#{@post.img}" %>" width="400" height="auto">
-        </div>
+        <%= link_to "/post_images/#{@post.img}", "data-lightbox" => "/post_images/#{@post.img}" do %>
+          <%= image_tag "/post_images/#{@post.img}", class:"post-show-img" %>
+        <% end %>
         <div class="video">
-        <video src = "<%= "/post_movies/#{@post.movie}" %>" width="400" type="video/*"  controls></video>
+         <video src = "<%= "/post_movies/#{@post.movie}" %>" width="400" type="video/*"  controls></video>
         </div>
       </div>
         <div class="post-time">

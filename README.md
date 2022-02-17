@@ -12,18 +12,7 @@
 * Rails version
 6.1.4
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 課題
+実用できるレベルには至っていない。
+パスワードの再設定や、SNSログインの実装もしていきたい。
+個人情報を保護するため取引相手に住所を教えずとも配送できるようプログラミングの勉強を頑張ります。
